@@ -2,6 +2,7 @@ package io.github.thuanymendonca.quarkussocial.rest;
 
 import io.github.thuanymendonca.quarkussocial.domain.model.User;
 import io.github.thuanymendonca.quarkussocial.rest.dto.CreateUserRequest;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import io.quarkus.hibernate.orm.panache.PanacheQuery;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
@@ -11,7 +12,7 @@ import jakarta.ws.rs.core.Response;
 @Path("/users")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-public class UserResource {
+public class UserResource extends PanacheEntityBase {
 
     @POST
     @Transactional
